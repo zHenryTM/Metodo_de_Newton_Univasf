@@ -19,9 +19,7 @@ def melhor_chute(indice, radical):
     return chute
 
 
-iteracoes = 0
-
-# Validando entrando do índice.
+# Validando entrada do índice.
 while True:
     try:
         indice  = int(input("Índice (número natural maior que zero): "))
@@ -47,7 +45,9 @@ while True:
         print("Por favor, insira um número!")
 
 
+iteracoes = 0
 chute = melhor_chute(indice, radical)
+
 
 while True:
     iteracoes += 1
