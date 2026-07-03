@@ -26,9 +26,9 @@ while True:
         if (indice > 0):
             break
         else:
-            print("Por favor, insira um número maior que zero!")
+            print("Por favor, insira um número maior que zero!\n")
     except:
-        print("Por favor, insira um número inteiro para o índice!")
+        print("Por favor, insira um número inteiro para o índice!\n")
 
 
 # Validando entrada do radical.
@@ -37,15 +37,16 @@ while True:
         radical = float(input("Radical (número real): "))
         
         if (indice % 2 == 0 and radical < 0):
-            print("Com índice par, o radical não pode ser negativo!")
+            print("Com índice par, o radical não pode ser negativo!\n")
         else:
             break
     except:
-        print("Por favor, insira um número!")
+        print("Por favor, insira um número!\n")
 
 
 iteracoes = 0
 chute = melhor_chute(indice, radical)
+
 
 try:
     while True:
@@ -65,6 +66,6 @@ try:
     print(f"Quantidade de iterações: {iteracoes}")
     print(f"O valor de saída é: {chute}")
 except OverflowError:
-    print("Por favor, tenha piedade, número gigantão, não!")
+    print("Por favor, tenha piedade, número gigantão, não!\n")
 except:
-    print("Aconteceu alguma erro desconhecido. Por favor, tente novamente")
+    print("Aconteceu alguma erro desconhecido. Por favor, tente novamente\n")
