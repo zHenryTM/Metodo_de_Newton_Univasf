@@ -13,7 +13,6 @@ def melhor_chute(indice, radical):
             if (valor_mais_proximo < valor_proximo <= radical):
                 valor_mais_proximo = valor_proximo
             else:
-                print(f"Melhor chute: {chute}")
                 break
         chute += 0.1
     return chute
@@ -48,21 +47,24 @@ while True:
 iteracoes = 0
 chute = melhor_chute(indice, radical)
 
-
-while True:
-    iteracoes += 1
+try:
+    while True:
+        iteracoes += 1
+        
+        funcao = chute ** indice - radical
+        derivada = indice * chute ** indice - 1
     
-    funcao = chute ** indice - radical
-    derivada = indice * chute ** indice - 1
-
-    novo_chute = chute - funcao / derivada
-    
-    if (abs(novo_chute - chute) < 0.0001):
-        chute = novo_chute
-        break
-    else:
-        chute = novo_chute
-
-
-print(f"Quantidade de iterações: {iteracoes}")
-print(f"O valor de saída é: {chute}")
+        novo_chute = chute - funcao / derivada
+        
+        if (abs(novo_chute - chute) < 0.0001):
+            chute = novo_chute
+            break
+        else:
+            chute = novo_chute
+            
+    print(f"Quantidade de iterações: {iteracoes}")
+    print(f"O valor de saída é: {chute}")
+except OverflowError:
+    print("Por favor, tenha piedade, número gigantão, não!")
+except:
+    print("Aconteceu alguma erro desconhecido. Por favor, tente novamente")
