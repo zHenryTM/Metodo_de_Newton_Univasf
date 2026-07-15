@@ -4,19 +4,34 @@
 def melhor_chute(indice, radical):
     chute = 0
     
-    while True and radical != 0:
-        valor_proximo = chute ** indice
-        
-        if (chute == 0):
-            valor_mais_proximo = valor_proximo
-        else:
-            if (valor_mais_proximo < valor_proximo <= radical):
+    if (radical > 0):
+        while True and radical != 0:
+            valor_proximo = chute ** indice
+            
+            if (chute == 0):
                 valor_mais_proximo = valor_proximo
             else:
-                print(f"Melhor chute: {chute}")
-                break
-        chute += 0.1
-    return chute
+                if (valor_mais_proximo < valor_proximo <= radical):
+                    valor_mais_proximo = valor_proximo
+                else:
+                    print(f"Melhor chute: {chute}")
+                    break
+            chute += 0.1
+        return chute
+    else:
+        while True and radical != 0:
+            valor_proximo = chute ** indice
+            
+            if (chute == 0):
+                valor_mais_proximo = chute ** indice
+            else:
+                if (valor_proximo <= radical < valor_mais_proximo):
+                    print(f"Melhor chute: {chute}")
+                    break
+                else:
+                    valor_mais_proximo = valor_proximo
+            chute -= 0.1 
+        return chute
 
 
 iteracoes = 0
